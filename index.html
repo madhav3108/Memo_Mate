@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Taking App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/design.css">
+    <script type="module" src="scripts/controllers/notes-controller.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="alert alert-info text-center">MemoMate</h1>
+        <div class="form-group">
+            <label>Id</label>
+            <input id="id" class="form-control" type="text" placeholder="Type Id here" />
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input id="title" class="form-control" type="text" placeholder="Type Title here" />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="desc" class="form-control" rows="5" cols="20" placeholder="Type desc here">
+
+            </textarea>
+            <div class="form-group">
+                <label>Completion date</label>
+                <input id="cdate" class="form-control" type="date" />
+            </div>
+            <div class="form-group">
+                <label>Importance</label>
+                <input id="importance" class="form-control" type="color" placeholder="Type Id here" />
+            </div>
+            <br>
+            <div>
+                <button id="add" class="btn btn-primary">Add</button>
+                <button id="delete" class="btn btn-danger">Delete</button>
+                <button id="search" class="btn btn-info">Search</button>
+                <!--<button class="btn btn-success">Sort</button>
+                <button id="sort-up" class="btn btn-success"><i class="fa-solid fa-sort-up"></i></button>
+                <button id="sort-down" class="btn btn-success"><i class="fa-solid fa-sort-down"></i></button>-->
+                <button id="update" class="btn btn-warning">Update</button>
+                <button id="clear" class="btn btn-danger">Clear All</button>
+                <!-- <button class="btn btn-success">Save to Server</button>
+                <button class="btn btn-secondary">Load From Server</button>
+                <button id="save" class="btn btn-success">Save</button> 
+                <button class="btn btn-secondary">Load</button> -->
+
+            </div>
+            <br>
+           
+            </div>
+            
+            <div>
+                <div id="searchContainer">
+                
+                    <input id="searchText" class="form-control" type="text" placeholder="Enter Your ID "
+                        style="display: none;">
+                </div>        
+                <h3>Total records <span id="total"></span> Mark Records <span id="marktotal"></span> Unmark records
+                    <span id="unmarktotal"></span>
+                </h3>
+            </div>
+            <table class="table table-bordered">
+                <thread>
+                    <tr>
+                        <th class="table-dark">Id 
+                            
+                        </th>
+                        
+                        <th id="table-head" class="table-dark flex flex-row" >Title
+                            <i id="sort-up" class="fas fa-sort-up" style="position:relative;left:64px;bottom:5px" ></i>
+                             <i id="sort-down" class="fas fa-sort-down" style="position:relative;left:50px;top:5px"></i>
+                        
+                            </th>
+                        <th id="table-head" class="table-dark">Description
+                        </th>
+                        <th id="table-head" class="table-dark">Completion Date
+                            <i id="sort-up1" class="fas fa-sort-up" style="position:relative;left:64px;bottom:5px" ></i>
+                             <i id="sort-down1" class="fas fa-sort-down" style="position:relative;left:50px;top:5px"></i>
+                        </th>
+                        <th class="table-dark">Imporatnce</th>
+                        <th class="table-dark">Operations</th>
+                    </tr>
+                </thread>
+                <tbody id="notes">
+                    <!--Dynamic Records Will be come here-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
